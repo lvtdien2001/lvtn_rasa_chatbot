@@ -1,91 +1,330 @@
 version: "3.1"
 
 nlu:
-- intent: greet
+#Ý đồ khách hàng
+- intent: greet #1.chào hỏi
   examples: |
     - hey
     - hello
     - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - chào
+    - chào bạn
+    - chao
+    - chao ban
+    - chao anh
+    - chao chi
+    - chao shop
+    - chào anh
+    - chào chị
+    - chào shop
+    - shop
+    - shop ơi
+    - shop oi
+    - bạn ơi
+    - ban oi
+    - anh ơi
+    - anh oi
+    - chị ơi
+    - chi oi
+    - mình có câu hỏi
+    - minh co cau hoi
+    - cho mình hỏi
+    - cho minh hoi
+    - mình muốn hỏi
+    - minh muon hoi
 
-- intent: goodbye
+- intent: goodbye #2.tạm biệt
   examples: |
-    - cu
     - good by
-    - cee you later
     - good night
     - bye
     - goodbye
-    - have a nice day
-    - see you around
     - bye bye
-    - see you later
+    - hẹn gặp lại
+    - hen gap lai
+    - tạm biệt
+    - tam biet
+    - ngủ ngon
+    - ngu ngon
+    - chúc bạn ngủ ngon
+    - chuc ngu ngon
+    - pye pye
 
-- intent: affirm
+- intent: order #3.đặt hàng
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - làm sao mua hàng
+    - lam sao mua hang
+    - tôi muốn mua sản phẩm
+    - toi muon mua san pham
+    - làm sao đặt hàng
+    - lam sao dat hang
+    - mua hàng kiểu gì
+    - mua hang kieu gi
+    - mình muốn đặt hàng
+    - minh muon dat hang
+    - đặt hàng
+    - dat hang
+    - em muốn đặt hàng
+    - em muon dat hang
 
-- intent: deny
+- intent: sale #4.muốn mua hàng
+  examples: |
+    - mình muốn mua đồng hồ
+    - minh muon mua dong ho
+    - minh muon mua hang
+    - mình muốn mua hàng
+    - tôi cần mua đồng hồ
+    - toi can mua dong ho
+    - tôi muốn mua đồng hồ
+    - toi muon mua dong ho
+    - tìm đồng hồ
+    - tim dong ho
+    - can dong ho phu hop
+    - cần đồng hồ phù hợp
+    - mua đồng hồ thích hợp
+    - tìm đồng hồ thích hợp
+    - em cần mua đồng hồ
+    - em can mua dong ho
+    - đồng hồ
+    - dong ho
+    - đồng hồ đeo tay
+    - dong ho deo tay
+    - mua đồng hồ
+    - mua hàng
+    - mua hang
+
+- intent: ask_func #5.hỏi chức năng
+  examples: |
+    - bạn có thể giúp gì cho mình
+    - ban co the giup gi cho minh
+    - bạn có thể làm được gì
+    - ban co the lam duoc gi
+    - chức năng của bạn là gì
+    - chuc nang cua ban la gi
+    - bạn giúp được gì nào
+    - bạn giỏi nhất làm gì
+    - bạn có tư vấn giúp mình được không
+    - việc gì bạn làm được
+    - kể xem bạn làm được gì
+    - cho mình biết bạn làm được gì nhé
+    - bạn hữu dụng như thế nào
+    - bạn có ích trong những việc gì
+    - lĩnh vực gì bạn giỏi nhất
+    - mình tò mò về những việc bạn làm được
+    - chẳng biết bạn làm được gì
+    - bạn tệ nhất trong việc gì
+    - bạn biết được những lĩnh vực gì
+    - bạn giỏi hỗ trợ nhất trong lĩnh vực gì
+    - kể cho mình biết những việc bạn có thể làm được nhé
+    - nói cho mình về những việc bạn giúp được mình
+    - bạn giúp được mình gì nào
+    - em giúp được gì
+    - em làm được gì
+    - mày biết làm gì
+    - em biết làm gì
+    - bạn biết làm gì
+    - biết làm gì
+    - làm được gì
+    - có làm được gì
+    - có làm được trò gì
+    - giúp giúp cái gì
+    - biết gì mà nói
+    - làm được gì
+    - giúp được gì
+    - mày làm được gì
+    - có biết gì
+
+- intent: thank #6.cảm ơn
+  examples: |
+    - cảm ơn bạn
+    - cam on
+    - tks
+    - thanks
+    - thank
+    - thank you
+    - cảm ơn rất nhiều
+    - rất vui vì được trợ giúp
+    - great
+    - tuyệt vời
+    - good
+    - nice
+    - tốt lắm
+
+- intent: deny #7.từ chối
   examples: |
     - no
     - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - khong
+    - không
+    - not
+    - khong can
+    - không cần
 
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
-- intent: bot_challenge
+- intent: bot_challenge #8.bot hay người?
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+    - bạn là bot
+    - bạn có phải con người không
+    - bạn là con người
+    - bạn có phải bot không
+
+- intent: ask_quantity_male #9.hỏi đồng hồ nam
+  examples: |
+    - số đồng hồ nam
+    - còn đồng hồ nam không
+    - shop còn nam không
+    - đồng hồ nam
+    - đồng hồ con trai
+    - bên mình còn đồng hồ nam không ạ
+    - đồng hồ nam còn không
+    - đồng hồ nam tồn kho
+    - đồng hồ nam còn bao nhiêu
+    - hết đồng hồ nam
+    - đồng hồ đàn ông
+    - đồng hồ quý ông
+    - nam
+
+- intent: ask_quantity_female #10.hỏi đồng hồ nữ
+  examples: |
+    - số đồng hồ nữ
+    - còn đồng hồ nữ không
+    - shop còn nữ không
+    - đồng hồ nữ
+    - đồng hồ phụ nữ
+    - bên mình còn đồng hồ nữ không ạ
+    - đồng hồ nữ còn không
+    - đồng hồ nữ tồn kho
+    - đồng hồ nữ còn bao nhiêu
+    - hết đồng hồ nữ
+    - đồng hồ con gái
+    - số đồng hồ con gái
+    - đồng cho cho con gái
+    - đồng hồ con gái còn không
+    - đồng hồ quý bà
+    - nu
+
+- intent: ask_quantity_couple #11.hỏi đồng hồ cặp đôi
+  examples: |
+    - số đồng hồ cặp đôi
+    - còn đồng hồ cặp đôi không
+    - shop còn cặp đôi không
+    - đồng hồ cặp đôi
+    - đồng hồ cặp đôi còn tồn kho
+    - bên mình còn đồng hồ cặp đôi không ạ
+    - đồng hồ cặp đôi còn không
+    - đồng hồ cặp đôi tồn kho
+    - đồng hồ cặp đôi còn bao nhiêu
+    - hết đồng hồ cặp đôi
+    - đồng hồ đôi
+    - số đồng hồ đôi
+    - đồng cho cho vợ chồng
+    - đồng hồ đôi còn lại không shop
+    - đồng hồ cho cặp đôi yêu nhau
+    - cặp đôi
+    - cap doi
+
+- intent: ask_time_received #12.hỏi thời gian nhận hàng
+  examples: |
+    - bao lâu nhận hàng
+    - bao lâu thì tới
+    - hàng vận chuyển bao lâu
+    - hàng bao lâu thì tới
+    - khi nào nhận hàng
+    - khi nào thì có hàng
+    - đặt hàng xong thì khi nào nhận được hàng
+    - khi nào giao hàng
+    - khi nào mới nhận hàng
+    - hàng được giao trong bao lâu
+    - giao hàng trong bao lâu
+    - chưa nhận được hàng
+    - sao chưa nhận được hàng
+    - bao giờ hàng được giao
+    - tôi vẫn chưa nhận được hàng
+    - mấy ngày mới giao hàng
+    - sao mình chưa nhận được hàng
+
+- intent: ask_voucher #13.hỏi chương trình km
+  examples: |
+    - km
+    - ct km
+    - khuyen mai
+    - khuyến mãi
+    - sản phẩm khuyến mãi
+    - chương trình khuyến mãi
+    - giảm giá
+    - chương trình giảm giá
+    - hiện tại có km không
+    - có khuyến mãi gì không shop
+    - km gì không
+    - đồng hồ giảm giá
+    - hạ giá
+    - chương trình hạ giá
+    - voucher
+    - discount
+    - chiết khấu
+
+- intent: ask_paymethod #14.hỏi phương thức thanh toán
+  examples: |
+    - thanh toán
+    - ví điện tử
+    - thanh toán như nào
+    - thanh toán kiểu gì
+    - mình muốn thanh toán thì làm sao
+    - làm sao thanh toán
+    - phương thức thanh toán
+    - thanh toán ở đâu
+    - sao thanh toán đây
+    - tôi cần thanh toán cho đơn hàng
+    - thanh toán online
+    - thanh toán offline
+    - thanh toán trực tuyến
+    - thanh toán khi nhận hàng
+
+- intent: ask_brand #15.hỏi thương hiệu
+  examples: |
+    - thương hiệu
+    - có thương hiệu nào
+    - không biết shop có thương hiệu nào
+    - bao nhiêu thương hiệu
+    - có thương hiệu bao nhiêu
+    - thương hiệu sản phẩm
+    - mấy thương hiệu
+    - shop có mấy thương hiệu
+    - cửa hàng bán bao nhiêu thương hiệu
+
+- intent: ask_forgot_password #16.quên mật khẩu
+  examples: |
+    - quên mk
+    - quên mật khẩu
+    - tôi quên mật khẩu rồi
+    - làm sao lấy lại mk
+    - sao lấy lại mật khẩu đây
+    - mình muốn lấy lại mật khẩu
+    - t muốn lấy lại mk
+    - t quên mk
+    - giúp mình lấy lại mật khẩu
+    - mat khau
+
+- intent: ask_warranty #17.hỏi bảo hành
+  examples: |
+    - bảo hành
+    - bao hanh
+    - sản phẩm có bảo hành không
+    - bảo hành như nào
+    - có bảo hành hông
+    - bảo hành ra sao
+    - bao lâu hết bảo hành
+    - bảo hành trong bao lâu
+    - chương trình bảo hành như thế nào
+    - shop có bảo hành không
+    - sản phẩm được bảo hành bao lâu
+
+# - intent: out_of_scope
+  # examples: |
+  #   - Tôi cần người tâm sự
+  #   - Tôi muốn mua thiếu
+  #   - Tôi hết tiền rồi
+  #   - Mày bị ngu à

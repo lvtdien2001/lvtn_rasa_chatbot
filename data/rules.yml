@@ -2,6 +2,12 @@ version: "3.1"
 
 rules:
 
+- rule: Say hello anytime the user says hello
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_did_that_help
+
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
@@ -11,3 +17,90 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Say thanks anytime the user thanks
+  steps:
+  - intent: thank
+  - action: utter_thank
+
+- rule: Say goodbye anytime the user deny
+  steps:
+  - intent: deny
+  - action: utter_goodbye
+
+- rule: Say order
+  steps:
+  - intent: order
+  - action: utter_order
+
+- rule: Ask gender
+  steps:
+  - intent: sale
+  - action: utter_gender
+  - action: utter_ask_gender
+
+- rule: Ask function
+  steps:
+  - intent: ask_func
+  - action: utter_func
+
+- rule: ask brand
+  steps:
+  - intent: ask_brand
+  - action: utter_brand
+
+- rule: ask payment
+  steps:
+  - intent: ask_paymethod
+  - action: utter_paymethod
+
+- rule: say gender
+  steps:
+  - intent: sale
+  - action: utter_gender
+  - action: utter_ask_gender
+
+- rule: greet - male watch
+  steps:
+  - intent: ask_quantity_male
+  - action: action_male_watch
+  
+- rule: female watch
+  steps:
+  - intent: ask_quantity_female
+  - action: action_female_watch
+
+- rule: couple watch
+  steps:
+  - intent: ask_quantity_couple
+  - action: action_couple_watch
+  
+- rule: ask time received
+  steps:
+  - intent: ask_time_received
+  - action: utter_time_received
+  
+- rule: ask voucher
+  steps:
+  - intent: ask_voucher
+  - action: utter_voucher
+  
+- rule: forgot password
+  steps:
+  - intent: ask_forgot_password
+  - action: utter_forgot_password
+
+- rule: ask warranty
+  steps:
+  - intent: ask_warranty
+  - action: utter_warranty
+
+# - rule: out-of-scope
+#   steps:
+#   - intent: out_of_scope
+#   - action: utter_out_of_scope
+
+# - rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+#   steps:
+#   - intent: nlu_fallback
+#   - action: utter_please_rephrase

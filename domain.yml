@@ -3,32 +3,100 @@ version: "3.1"
 intents:
   - greet
   - goodbye
-  - affirm
+  - order
+  - sale
+  - thank
   - deny
-  - mood_great
-  - mood_unhappy
   - bot_challenge
+  - ask_func
+  - ask_quantity_male
+  - ask_quantity_female
+  - ask_quantity_couple
+  - ask_time_received
+  - ask_voucher
+  - ask_paymethod
+  - ask_brand
+  - ask_forgot_password
+  - ask_warranty
+  # - nlu_fallback
+  # - out_of_scope
 
 responses:
+#Bot trả lời
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  - text: "Chào bạn! Mình là Chatbot, tự động trả lời câu hỏi của bạn 24/7"
 
   utter_did_that_help:
-  - text: "Did that help you?"
+  - text: "Mình có thể giúp gì cho bạn không?"
 
-  utter_happy:
-  - text: "Great, carry on!"
+  utter_order:
+  - text: "Để đặt hàng tại Đồng hồ Thanh Điền, quý khách chỉ cần thêm các sản phẩm cần mua vào giỏ hàng, sau đó nhấn nút Đặt hàng."
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Kính chào quý khách!"
+
+  utter_thank:
+  - text: "Cảm ơn quý khách ạ!"
+
+  utter_ask_gender:
+  - text: "Quý khách cần mua đồng hồ nam, nữ hay cặp đôi ạ?"
+
+  utter_ask_price:
+  - text: "Quý khách muốn mua đồng hồ có giá khoảng bao nhiêu ạ?"
+
+  utter_func:
+  - text: "Mình có thể tư vấn, giải đáp thắc mắc của bạn về trang thương mại điện tử đồng hồ đeo tay Thanh Điền 24/7."
+
+  utter_paymethod:
+  - text: "Quý khách có thể chọn phương thức thanh toán trực tuyến qua ví VNPAY hoặc thanh toán khi nhận hàng."
+
+  utter_brand:
+  - text: "Hiện tại shop cung cấp các thương hiệu đồng hồ sau: Casio, G-Shock, Orient, Citizen, Modado, Baby-G, Nakzen, MVW, Elio."
+
+  utter_gender:
+  - text: "Đồng hồ đeo tay tại shop với nhiêu mẫu mã và thương hiệu nổi tiếng, phù hợp cho cả nam và nữ. Ngoài ra, shop còn cung cấp đồng hồ cho các cặp đôi, giúp gắn kết tình cảm lứa đôi - hâm nóng tình cảm vợ chồng."
+
+  utter_male_watch:
+  - text: "Hiện tại shop đang có {quantity} sản phẩm đồng hồ đeo tay nam với nhiều thương hiệu nổi tiếng ạ!"
+    image: "/product?gender=1"
+
+  utter_female_watch:
+  - text: "Hiện tại shop đang có {quantity} sản phẩm đồng hồ đeo tay nữ với nhiều thương hiệu nổi tiếng ạ!"
+    image: "/product?gender=2"
+
+  utter_couple_watch:
+  - text: "Hiện tại shop đang có {quantity} sản phẩm đồng hồ đeo tay cặp đôi với nhiều thương hiệu nổi tiếng ạ!"
+    image: "/product?gender=0"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "Mình là bot siêu cute của trang thương mại điện tử đồng hồ đeo tay Thanh Điền."
+
+  utter_time_received:
+  - text: "Dạ sản phẩm sẽ được giao trong thời gian từ 3 đến 5 ngày kể từ thời gian đặt hàng, phụ thuộc vào địa chỉ nhận hàng ạ."
+
+  utter_voucher:
+  - text: "Hiện tại shop chưa có chương trình khuyến mãi ạ!"
+
+  utter_forgot_password:
+  - text: "Để lấy lại mật khẩu, quý khách có thể nhấn vào nút Đăng nhập trên đầu trang, sau đó chọn chức năng đổi mật khẩu ạ."
+
+  utter_warranty:
+  - text: "Dạ, khi quý khách mua sản phẩm tại đồng hồ đeo tay Thanh Điền, sản phẩm sẽ được bảo hành trong 1 năm ạ."
+
+  utter_default:
+  - text: "Xin lỗi quý khách, tôi chưa hiểu được yêu cầu của quý khách."
+
+  utter_out_of_scope:
+  - text: "Xin lỗi quý khách, tôi chưa thể xử lý yêu cầu này."
+
+  # utter_please_rephrase:
+  # - text: "Xin lỗi quý khách, tôi chưa hiểu rõ yêu cầu của quý khách. Quý khách có thể hỏi lại không ạ?"
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+actions:
+  - action_male_watch
+  - action_female_watch
+  - action_couple_watch

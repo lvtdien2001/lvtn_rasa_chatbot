@@ -2,29 +2,265 @@ version: "3.1"
 
 stories:
 
-- story: happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+#1. chào hỏi - đặt hàng 
+# - story: greet and order watch
+#   steps:
+#   - intent: order
+#   - action: utter_order
 
-- story: sad path 1
+#2. đặt hàng
+- story: only order watch
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+  - intent: order
+  - action: utter_order
 
-- story: sad path 2
+#3. hỏi chức năng
+- story: only ask function
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+  - intent: ask_func
+  - action: utter_func
+
+#4. chào - hỏi chức năng - đặt hàng
+# - story: greet - ask function - order
+#   steps:
+#   - intent: ask_func
+#   - action: utter_func
+#   - intent: order
+#   - action: utter_order
+
+#5. chào - hỏi chức năng - hỏi bảo hành
+# - story: greet - ask function - ask warranty
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - action: utter_did_that_help
+#   - intent: ask_func
+#   - action: utter_func
+#   - intent: ask_warranty
+#   - action: utter_warranty
+
+#6. hỏi đồng hồ nam
+- story: male watch
+  steps:
+  - intent: ask_quantity_male
+  - action: action_male_watch
+
+#7. chào - hỏi đồng hồ nam
+- story: greet - male watch
+  steps:
+  - intent: ask_quantity_male
+  - action: action_male_watch
+
+#8. hỏi đồng hồ nữ
+- story: female watch
+  steps:
+  - intent: ask_quantity_female
+  - action: action_female_watch
+
+#9. chào - hỏi đồng hồ nữ
+# - story: greet - female watch
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - action: utter_did_that_help
+#   - intent: ask_quantity_female
+#   - action: action_female_watch
+
+#10. hỏi đồng hồ đôi
+- story: couple watch
+  steps:
+  - intent: ask_quantity_couple
+  - action: action_couple_watch
+
+#11. chào - hỏi đồng hồ đôi
+# - story: greet - couple watch
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - action: utter_did_that_help
+#   - intent: ask_quantity_couple
+#   - action: action_couple_watch
+
+#12. chào - hỏi đồng hồ nam -> nữ -> đôi
+# - story: greet - all gender watch
+#   steps:
+#   - intent: ask_quantity_male
+#   - action: action_male_watch
+#   - intent: ask_quantity_female
+#   - action: action_female_watch
+#   - intent: ask_quantity_couple
+#   - action: action_couple_watch
+
+#13. muốn mua hàng
+- story: sale watch
+  steps:
+  - intent: sale
+  - action: utter_gender
+  - action: utter_ask_gender
+
+#14. chào - muốn mua hàng
+# - story: greet - sale watch
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - action: utter_did_that_help
+#   - intent: sale
+#   - action: utter_gender
+#   - action: utter_ask_gender
+
+#15. chào - hỏi chức năng - muốn mua hàng
+# - story: greet - ask function - sale watch
+#   steps:
+#   - intent: ask_func
+#   - action: utter_func
+#   - intent: sale
+#   - action: utter_gender
+#   - action: utter_ask_gender
+
+#16. hỏi chương trình km
+- story: ask voucher
+  steps:
+  - intent: ask_voucher
+  - action: utter_voucher
+
+#17. chào - hỏi chương trình km 
+# - story: greet - ask voucher
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - action: utter_did_that_help
+#   - intent: ask_voucher
+#   - action: utter_voucher
+
+#18. chào - hỏi chương trình km - đặt hàng
+# - story: greet - ask voucher - order
+#   steps:
+#   - intent: ask_voucher
+#   - action: utter_voucher
+#   - intent: order
+#   - action: utter_order
+
+#19. chào - đặt hàng - thời gian nhận hàng
+# - story: greet - order - time received
+#   steps:
+#   - intent: order
+#   - action: utter_order
+#   - intent: ask_time_received
+#   - action: utter_time_received
+
+#20. hỏi thời gian nhận hàng
+- story: ask time received
+  steps:
+  - intent: ask_time_received
+  - action: utter_time_received
+
+#21. chào - hỏi thời gian nhận hàng
+# - story: greet - ask time received
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - action: utter_did_that_help
+#   - intent: ask_time_received
+#   - action: utter_time_received
+
+#22. hỏi thanh toán
+- story: ask payment
+  steps:
+  - intent: ask_paymethod
+  - action: utter_paymethod
+
+#23. chào - hỏi thanh toán
+# - story: greet - ask payment
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - action: utter_did_that_help
+#   - intent: ask_paymethod
+#   - action: utter_paymethod
+
+#24. hỏi đặt hàng - hỏi thanh toán
+# - story: ask order - ask payment
+#   steps:
+#   - intent: order
+#   - action: utter_order
+#   - intent: ask_paymethod
+#   - action: utter_paymethod
+
+#25. hỏi thương hiệu
+- story: ask brand
+  steps:
+  - intent: ask_brand
+  - action: utter_brand
+
+#26. chào - hỏi tương hiệu
+# - story: greet - ask brand
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - action: utter_did_that_help
+#   - intent: ask_brand
+#   - action: utter_brand
+
+#27. muốn mua hàng - hỏi thương hiệu - hỏi đặt hàng
+# - story: sale - ask brand - ask order
+#   steps:
+#   - intent: sale
+#   - action: utter_gender
+#   - action: utter_ask_gender
+#   - intent: ask_brand
+#   - action: utter_brand
+#   - intent: order
+#   - action: utter_order
+
+#28. quên mật khẩu
+- story: forgot password
+  steps:
+  - intent: ask_forgot_password
+  - action: utter_forgot_password
+
+#29. chào - quên mật khẩu
+# - story: greet - forgot password
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - action: utter_did_that_help
+#   - intent: ask_forgot_password
+#   - action: utter_forgot_password
+
+#30. hỏi bảo hành
+- story: ask warranty
+  steps:
+  - intent: ask_warranty
+  - action: utter_warranty
+
+#31. chào - hỏi bảo hành
+# - story: ask warranty
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - action: utter_did_that_help
+#   - intent: ask_warranty
+#   - action: utter_warranty
+
+#31. chào - hỏi chức năng - mua hàng - thương hiệu - km - thời gian nhân hàng - bảo hành - đặt hàng - thanh toán
+# - story: the customer want to buy watch
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - action: utter_did_that_help
+#   - intent: ask_func
+#   - action: utter_func
+#   - intent: sale
+#   - action: utter_ask_gender
+#   - intent: ask_brand
+#   - action: utter_brand
+#   - intent: ask_voucher
+#   - action: utter_voucher
+#   - intent: ask_time_received
+#   - action: utter_time_received
+#   - intent: ask_warranty
+#   - action: utter_warranty
+#   - intent: order
+#   - action: utter_order
+#   - intent: ask_paymethod
+#   - action: utter_paymethod
